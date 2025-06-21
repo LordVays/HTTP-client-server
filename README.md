@@ -34,5 +34,5 @@ Content Downloader - это веб-приложение, которое позв
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-репозиторий.git
-   cd ваш-репозиторий
+   git clone https://github.com/js-content-downloader.git
+   cd js-content-downloader
