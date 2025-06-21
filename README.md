@@ -38,7 +38,7 @@ Content Downloader - это веб-приложение, которое позв
    cd js-content-downloader
 2. Установите необходимые модули(зависимости):
    ```bash
-   npm install express cors node-fetch iconv-lite
+   npm install express cors node-fetch iconv-lite path
 3. Запустите сервер:
    ```bash
    node server/server.js
