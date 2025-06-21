@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Веб-приложение для загрузки и оффлайн-просмотра контента по ключевым словам.">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>Загрузчик Контента</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Загрузчик контента</h1>
+            <p>
+                Введите ключевое слово (<code>новости</code>, <code>космос</code>, <code>программирование</code>) и сохраняйте страницы для оффлайн-доступа.
+            </p>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <form id="search-form">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="keyword-input" placeholder="Введите ключевое слово..." required>
+                    </div>
+
+                    <button type="submit" id="search-button" title="Найти">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5 7 7-7 7"/></svg>
+                        <span>Найти</span>
+                    </button>
+
+                    <button type="button" id="clear-button" title="Очистить">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                        <span>Очистить</span>
+                    </button>
+                </form>
+            </section>
+            
+            <div id="message-area" class="message-area"></div>
+
+            <div class="results-grid">
+                <div id="url-list-container" class="list-container">
+                    <h2>Найденные URL</h2>
+                    <ul id="url-list">
+                    </ul>
+                </div>
+
+                <div id="progress-container" class="progress-container" style="display: none;">
+                    <h2>Статус загрузки</h2>
+                    <div id="progress-bar-container">
+                         <div id="progress-bar"></div>
+                    </div>
+                    <div class="progress-info">
+                        <span id="progress-text">0%</span>
+                        <span id="progress-size"></span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="saved-content-section">
+                <div class="saved-list-container list-container">
+                    <h2>Сохраненный контент (Offline)</h2>
+                    <ul id="saved-list">
+                    </ul>
+                </div>
+                
+                <div class="content-viewer">
+                    <div class="content-viewer-header">
+                        <h2>Просмотр</h2>
+                        <div class="viewer-controls">
+                           <span id="viewer-source-url"></span>
+                           <a id="viewer-open-original" href="#" target="_blank" rel="noopener noreferrer" title="Открыть в новой вкладке" style="display: none;">
+                               <span>Открыть оригинал</span>
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                           </a>
+                        </div>
+                    </div>
+                    <iframe id="content-frame" 
+                            sandbox="allow-same-origin" 
+                            srcdoc="<style>body{margin:0;font-family:inherit;color:inherit;}.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;color:#9ca3af;}.placeholder svg{width:60px;height:60px;margin-bottom:16px;stroke:#d1d5db;}.placeholder p{font-size:1.1rem;margin:0;}</style><div class='placeholder'><svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'></path><circle cx='12' cy='10' r='3'></circle></svg><p>Выберите сохраненный<br>элемент для просмотра</p></div>">
+                    </iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Учебная практика 2025</p>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

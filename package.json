@@ -1,0 +1,25 @@
+{
+  "name": "js-content-downloader",
+  "version": "1.0.0",
+  "description": "A client-server app to download content from the web.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sse",
+    "ajax",
+    "fetch"
+  ],
+  "author": "AI Assistant",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "iconv-lite": "^0.6.3",
+    "node-fetch": "^2.6.7"
+  }
+}
