@@ -34,8 +34,8 @@ Content Downloader - это веб-приложение, которое позв
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/js-content-downloader.git
-   cd js-content-downloader
+   git clone https://github.com/HTTP-client-server.git 
+   cd HTTP-client-server
 2. Установите необходимые модули(зависимости):
    ```bash
    npm install express cors node-fetch iconv-lite path
